@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7dfe7">
+<title>Paty Lu · Pagos</title>
+<style>
+:root{
+  --rose:#d98fa6; --rose2:#f7dfe7; --cream:#fffaf8;
+  --ink:#3d3035; --muted:#806f76; --gold:#b8945f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(145deg,#fffaf8 0%,#f9e7ed 55%,#efd1dc 100%);
+  color:var(--ink); display:flex; justify-content:center;
+}
+.card{
+  width:min(430px,100%); min-height:100vh; padding:28px 20px 30px;
+  display:flex; flex-direction:column; align-items:center;
+}
+.brand{
+  width:104px;height:104px;border-radius:50%;background:white;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 25px #9b6d7d35;margin-top:8px;
+  border:1px solid #ffffff;
+}
+.brand span{font-family:Georgia,serif;font-size:30px;color:var(--rose);font-weight:bold}
+h1{font-family:Georgia,serif;font-size:32px;margin:15px 0 3px;letter-spacing:.4px}
+.subtitle{font-size:14px;color:var(--muted);margin-bottom:25px}
+.section{
+  width:100%; background:#ffffffc9; backdrop-filter:blur(8px);
+  border:1px solid #fff; border-radius:22px; padding:17px;
+  box-shadow:0 10px 30px #9b6d7d18; margin-bottom:15px;
+}
+.section h2{font-size:15px;margin:0 0 12px;color:#624b54}
+.btn{
+  display:flex; align-items:center; gap:12px; width:100%; padding:15px 16px;
+  border-radius:15px; text-decoration:none; color:var(--ink);
+  background:#fff; border:1px solid #ead9df; margin:8px 0;
+  transition:.15s; font-weight:700;
+}
+.btn:active{transform:scale(.98)}
+.icon{
+  width:40px;height:40px;border-radius:12px;background:var(--rose2);
+  display:grid;place-items:center;font-size:20px;flex:none
+}
+.small{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:3px}
+.data{
+  background:#fff7fa;border-radius:14px;padding:13px;margin-top:8px;
+  font-size:13px;line-height:1.6;border:1px dashed #dfbdc9
+}
+.copy{
+  float:right;border:0;background:var(--rose);color:white;border-radius:9px;
+  padding:7px 10px;font-size:11px;font-weight:bold
+}
+.note{text-align:center;color:var(--muted);font-size:12px;line-height:1.5}
+.footer{margin-top:auto;padding-top:12px;color:#9a7f88;font-size:11px}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="brand"><span>PL</span></div>
+  <h1>Paty Lu</h1>
+  <div class="subtitle">Makeup Artist · Pagos y reservas</div>
+
+  <section class="section">
+    <h2>💄 Elige cómo pagar</h2>
+
+    <!-- CAMBIA ESTE ENLACE POR TU LINK REAL DE MERCADO PAGO -->
+    <a class="btn" href="TU_LINK_MERCADO_PAGO" target="_blank" rel="noopener">
+      <div class="icon">💳</div>
+      <div>Mercado Pago<span class="small">Paga con tarjeta o desde Mercado Pago</span></div>
+    </a>
+
+    <!-- CAMBIA ESTOS DATOS POR LOS DE BANORTE -->
+    <div class="btn" style="cursor:pointer" onclick="document.getElementById('bank').scrollIntoView({behavior:'smooth'})">
+      <div class="icon">🏦</div>
+      <div>Transferencia Banorte<span class="small">Ver datos bancarios</span></div>
+    </div>
+
+    <a class="btn" href="TU_LINK_WHATSAPP" target="_blank" rel="noopener">
+      <div class="icon">💬</div>
+      <div>WhatsApp<span class="small">Te ayudo con tu pago o reservación</span></div>
+    </a>
+  </section>
+
+  <section class="section" id="bank">
+    <h2>🏦 Datos para transferencia</h2>
+    <div class="data">
+      <b>Banco:</b> Banorte<br>
+      <b>Beneficiario:</b> TU NOMBRE<br>
+      <b>CLABE:</b> <span id="clabe">TU CLABE DE 18 DÍGITOS</span>
+      <button class="copy" onclick="copyText('clabe')">COPIAR</button>
+    </div>
+    <p class="note">Después de transferir, envía tu comprobante por WhatsApp.</p>
+  </section>
+
+  <section class="section">
+    <h2>✨ Paty Lu Makeup</h2>
+    <p class="note">Gracias por confiar en nosotros. Tu cita y tu pago, fácil y rápido desde tu celular.</p>
+  </section>
+
+  <div class="footer">Paty Lu Glow Studio · Hecho con ♡</div>
+</main>
+
+<script>
+function copyText(id){
+  const text=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(()=>alert("CLABE copiada"));
+}
+</script>
+</body>
+</html>
