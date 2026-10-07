@@ -108,7 +108,8 @@ h1{font-family:Georgia,serif;font-size:32px;margin:15px 0 3px;letter-spacing:.4p
 <script>
 function copyText(id){
   const text=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>{
+  navigator.clipboard.writeText(text).then(()=>
+    {
     const mensaje = document.createElement("div");
 
     mensaje.innerHTML = `
