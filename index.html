@@ -91,8 +91,8 @@ h1{font-family:Georgia,serif;font-size:32px;margin:15px 0 3px;letter-spacing:.4p
     <div class="data">
       <b>Banco:</b> Bbva<br>
       <b>Beneficiario:</b> Patricia Luna<br>
-      <b>CLABE:</b> <span id="clabe">4815163218507443</span>
-      <button class="copy" onclick="copyText('clabe')">COPIAR</button>
+      <b>CLABE:</b> <span id="numero de cuuenta">4815163218507443</span>
+      <button class="copy" onclick="copyText('Cuenta')">COPIAR</button>
     </div>
     <p class="note">Después de transferir, envía tu comprobante por WhatsApp.</p>
   </section>
@@ -108,7 +108,7 @@ h1{font-family:Georgia,serif;font-size:32px;margin:15px 0 3px;letter-spacing:.4p
 <script>
 function copyText(id){
   const text=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>alert("CLABE copiada"));
+  navigator.clipboard.writeText(text).then(()=>alert("CUENTA copiada"));
 }
 </script>
 </body>
