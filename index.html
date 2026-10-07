@@ -108,8 +108,32 @@ h1{font-family:Georgia,serif;font-size:32px;margin:15px 0 3px;letter-spacing:.4p
 <script>
 function copyText(id){
   const text=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>alert("Paty Lu: cuenta copiada");
+  navigator.clipboard.writeText(text).then(()=>{
+    const mensaje = document.createElement("div");
+
+    mensaje.innerHTML = `
+      <strong>💄 Paty Lu</strong>
+      <br>
+      Cuenta copiada correctamente ✨
+    `;
+
+    mensaje.style.position = "fixed";
+    mensaje.style.top = "25px";
+    mensaje.style.left = "50%";
+    mensaje.style.transform = "translateX(-50%)";
+    mensaje.style.background = "#fff";
+    mensaje.style.color = "#3d3035";
+    mensaje.style.padding = "16px 24px";
+    mensaje.style.borderRadius = "16px";
+    mensaje.style.boxShadow = "0 8px 30px rgba(0,0,0,.18)";
+    mensaje.style.textAlign = "center";
+    mensaje.style.zIndex = "9999";
+    mensaje.style.fontFamily = "Arial, sans-serif";
+
+    document.body.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+    }, 2500);
+  });
 }
-</script>
-</body>
-</html>
